@@ -7,7 +7,6 @@ self.addEventListener("install", e => {
         .addAll([
           // first url is important (check network tab)
           // "https://connoringold.github.io/animeJS-fun/",
-          "/animeJS-fun",
           "/",
           "/index.html",
           "/app.js",
