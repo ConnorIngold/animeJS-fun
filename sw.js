@@ -1,7 +1,7 @@
 var CACHE_NAME = "my-site-cache-v1";
 const assets = [
   "/",
-  "index.html",
+  "/index.html",
   "js/function.js",
   "js/app.js",
   "css/index.css",
