@@ -6,7 +6,7 @@ self.addEventListener("install", e => {
       return cache
         .addAll([
           // first url is important (check network tab)
-          "/",
+          "https://connoringold.github.io/animeJS-fun/",
           "/app.js",
           "/index.html",
           "/js/function.js",
@@ -23,13 +23,28 @@ self.addEventListener("activate", event => {
   event.waitUntil(self.clients.claim());
 });
 
-self.addEventListener("fetch", event => {
+addEventListener("fetch", function(event) {
   event.respondWith(
-    caches
-      .open(cacheName)
-      .then(cache => cache.match(event.request, { ignoreSearch: true }))
-      .then(response => {
-        return response || fetch(event.request);
-      })
+    caches.match(event.request).then(function(response) {
+      if (response) {
+        return response; // if valid response is found in cache return it
+      } else {
+        return fetch(event.request) //fetch from internet
+          .then(function(res) {
+            return caches.open(CACHE_DYNAMIC_NAME).then(function(cache) {
+              cache.put(event.request.url, res.clone()); //save the response for future
+              return res; // return the fetched data
+            });
+          })
+          .catch(function(err) {
+            // fallback mechanism
+            return caches
+              .open(CACHE_CONTAINING_ERROR_MESSAGES)
+              .then(function(cache) {
+                return cache.match("/offline.html");
+              });
+          });
+      }
+    })
   );
-});
+});          
