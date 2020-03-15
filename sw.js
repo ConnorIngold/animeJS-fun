@@ -6,9 +6,10 @@ self.addEventListener("install", e => {
       return cache
         .addAll([
           // first url is important (check network tab)
-          "https://connoringold.github.io/animeJS-fun/",
-          "/app.js",
+          // "https://connoringold.github.io/animeJS-fun/",
+          "/animeJS-fun",
           "/index.html",
+          "/app.js",
           "/js/function.js",
           "/css/index.css",
           "/img/placeholder.jpg",
