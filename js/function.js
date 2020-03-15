@@ -45,14 +45,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
-
-// .finished.then(function() {
-//       anime({
-//         targets: ".image",
-//         // [start, finish]
-//         translateY: [-900, 0],
-//         delay: 300,
-//         easing: "linear"
-//       });
-//   });
