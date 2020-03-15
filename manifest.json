@@ -1,13 +1,13 @@
 {
   "name": "Fuck Internet Explorer",
   "short_name": "FuckIE",
-  "start_url": "/index.html",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#121212",
   "theme_color": "#BB86FC",
   "orientation": "portrait-primary",
   "icons": [{
-      "src": "/img/ie.png",
+      "src": "img/ie.png",
       "type": "image/png",
       "sizes": "144x144"
     }
