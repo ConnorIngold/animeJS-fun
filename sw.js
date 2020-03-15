@@ -5,7 +5,7 @@ self.addEventListener("install", e => {
     caches.open(cacheName).then(cache => {
       return cache
         .addAll([
-          "/",
+          "animeJS-fun/",
           "index.html",
           "js/function.js",
           "js/app.js",
