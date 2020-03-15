@@ -5,10 +5,11 @@ self.addEventListener("install", e => {
     caches.open(cacheName).then(cache => {
       return cache
         .addAll([
+          // first url is important (check network tab)
           "animeJS-fun/",
+          "app.js",
           "index.html",
           "js/function.js",
-          "js/app.js",
           "css/index.css",
           "img/placeholder.jpg",
           "https://fonts.googleapis.com/css?family=Heebo:300|Playfair+Display:400,700&display=swap"
