@@ -7,13 +7,12 @@ self.addEventListener("install", e => {
         .addAll([
           // first url is important (check network tab)
           // "https://connoringold.github.io/animeJS-fun/",
-          "/animeJS-fun",
-          "/animeJS-fun/index.html",
-          "/animeJS-fun/app.js",
-          "/animeJS-fun/js/function.js",
-          "/animeJS-fun/css/index.css",
-          "/animeJS-fun/img/placeholder.jpg",
-          "https://fonts.googleapis.com/css?family=Heebo:300|Playfair+Display:400,700&display=swap"
+          "/",
+          "/index.html",
+          "/app.js",
+          "/js/function.js",
+          "/css/index.css",
+          "/img/placeholder.jpg"
         ])
         .then(() => self.skipWaiting());
     })
