@@ -8,11 +8,11 @@ self.addEventListener("install", e => {
           // first url is important (check network tab)
           // "https://connoringold.github.io/animeJS-fun/",
           "/animeJS-fun",
-          "/index.html",
-          "/app.js",
-          "/js/function.js",
-          "/css/index.css",
-          "/img/placeholder.jpg",
+          "/animeJS-fun/index.html",
+          "/animeJS-fun/app.js",
+          "/animeJS-fun/js/function.js",
+          "/animeJS-fun/css/index.css",
+          "/animeJS-fun/img/placeholder.jpg",
           "https://fonts.googleapis.com/css?family=Heebo:300|Playfair+Display:400,700&display=swap"
         ])
         .then(() => self.skipWaiting());
