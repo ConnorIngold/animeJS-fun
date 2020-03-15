@@ -6,11 +6,11 @@ self.addEventListener("install", e => {
       return cache
         .addAll([
           "/",
-          "/index.html",
-          "/js/function.js",
-          "/js/app.js",
-          "/css/index.css",
-          "/img/placeholder.jpg",
+          "index.html",
+          "js/function.js",
+          "js/app.js",
+          "css/index.css",
+          "img/placeholder.jpg",
           "https://fonts.googleapis.com/css?family=Heebo:300|Playfair+Display:400,700&display=swap"
         ])
         .then(() => self.skipWaiting());
