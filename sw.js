@@ -1,4 +1,4 @@
-const cacheName = 'fuck internet';
+const cacheName = "FuckIE";
 
 self.addEventListener("install", e => {
   e.waitUntil(
