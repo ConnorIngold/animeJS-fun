@@ -6,6 +6,7 @@ self.addEventListener("install", e => {
       return cache
         .addAll([
           // first url is important (check network tab)
+          "/",
           "app.js",
           "index.html",
           "js/function.js",
