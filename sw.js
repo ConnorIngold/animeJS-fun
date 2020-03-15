@@ -1,11 +1,11 @@
 var CACHE_NAME = "my-site-cache-v1";
 const assets = [
   "/",
-  "/index.html",
-  "/js/function.js",
-  "/js/app.js",
-  "/css/index.css",
-  "/img/placeholder.jpg",
+  "index.html",
+  "js/function.js",
+  "js/app.js",
+  "css/index.css",
+  "img/placeholder.jpg",
   "https://fonts.googleapis.com/css?family=Heebo:300|Playfair+Display:400,700&display=swap"
 ];
 
