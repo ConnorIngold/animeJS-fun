@@ -1,50 +1,55 @@
-const cacheName = "FuckIE";
+const cacheName = "v1"
 
-self.addEventListener("install", e => {
+const cacheAssets = [
+  "index.html",
+  "/css/index.css",
+  "/js/anime.min.js",
+  "/js/waypoints.min.js",
+  "/js/simplebar.min.js",
+  "/js/app.js",
+  "/js/function.js",
+  "/img/download.png",
+  "/img/placeholder.jpg",
+  "/img/favicon.jpg"
+]
+
+
+
+// Call Install Event
+self.addEventListener("install", (e) => {
+  console.log("Service Worker: Installed")
+
   e.waitUntil(
-    caches.open(cacheName).then(cache => {
-      return cache
-        .addAll([
-          // first url is important (check network tab)
-          // "https://connoringold.github.io/animeJS-fun/",
-          "/",
-          "/index.html",
-          "/app.js",
-          "/js/function.js",
-          "/css/index.css",
-          "/img/placeholder.jpg"
-        ])
-        .then(() => self.skipWaiting());
-    })
-  );
-});
+    caches
+      .open(cacheName)
+      .then((cache) => {
+        console.log("Service Worker: Caching Files")
+        cache.addAll(cacheAssets)
+      })
+      .then(() => self.skipWaiting())
+  )
+})
 
-self.addEventListener("activate", event => {
-  event.waitUntil(self.clients.claim());
-});
-
-addEventListener("fetch", function(event) {
-  event.respondWith(
-    caches.match(event.request).then(function(response) {
-      if (response) {
-        return response; // if valid response is found in cache return it
-      } else {
-        return fetch(event.request) //fetch from internet
-          .then(function(res) {
-            return caches.open(CACHE_DYNAMIC_NAME).then(function(cache) {
-              cache.put(event.request.url, res.clone()); //save the response for future
-              return res; // return the fetched data
-            });
-          })
-          .catch(function(err) {
-            // fallback mechanism
-            return caches
-              .open(CACHE_CONTAINING_ERROR_MESSAGES)
-              .then(function(cache) {
-                return cache.match("/offline.html");
-              });
-          });
-      }
+// Call Activate Event
+self.addEventListener("activate", (e) => {
+  console.log("Service Worker: Activated")
+  // Remove unwanted caches
+  e.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cache) => {
+          if (cache !== cacheName) {
+            console.log("Service Worker: Clearing Old Cache")
+            return caches.delete(cache)
+          }
+        })
+      )
     })
-  );
-});          
+  )
+})
+
+// Call Fetch Event
+self.addEventListener("fetch", (e) => {
+  console.log("Service Worker: Fetching")
+  e.respondWith(fetch(e.request).catch(() => caches.match(e.request)))
+})

@@ -47,6 +47,7 @@ p{
 .large {
   font-size: 24px !important;
   margin-bottom: 0px;
+  margin-top: 30px;
 }
 
 
@@ -152,12 +153,18 @@ article{
   transform: translateY(1000px);
 }
 
+.seperator{
+    width: 100%;
+    border-top: 1px solid;
+}
+
 .text-wrapper{
   display: flex;
   flex-direction: column;
   align-self: center;
-  padding: 0px 70px 0px 70px;
-  margin-top: 50px;
+  max-width: 80%;
+  margin: auto;
+  margin-top: 30px;
   transform: translateY(1000px);
   p{
     &:first-child:first-letter{
@@ -167,6 +174,9 @@ article{
       padding: 5px 12px 0px 0px;
       color: #BB86FC;
     }
+    a{
+      color: #BB86FC;
+    }
   }
 }
 // general style
@@ -174,4 +184,14 @@ article{
 // sidebar library styles
 .simplebar-wrapper{
   max-height: 100% !important;
+}
+
+// media queries
+@media only screen and (max-width: 780px) {
+  article{
+    width: 100%;
+  }
+  .purple-bg {
+    display: none;
+  }
 }
