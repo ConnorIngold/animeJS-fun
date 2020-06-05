@@ -1,22 +1,22 @@
 {
-  "name": "Fuck Internet Explorer",
-  "short_name": "FuckIE",
+  "name": "See My Portfolio offline",
+  "short_name": "Connor's portfolio",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#121212",
   "theme_color": "#BB86FC",
   "orientation": "portrait-primary",
   "icons": [{
-      "src": "img/ie.png",
+      "src": "img/favicon.png",
       "type": "image/png",
       "sizes": "144x144"
     }, {
-      "src": "img/ie.png",
+      "src": "img/favicon.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "img/ie.png",
+      "src": "img/favicon.png",
       "type": "image/png",
       "sizes": "512x512"
     }
