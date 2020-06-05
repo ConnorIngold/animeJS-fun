@@ -41,14 +41,17 @@ p {
 
 .large {
   font-size: 24px !important;
-  margin-bottom: 0px;
-  margin-top: 30px;
+  margin: 0px;
 }
 
 .flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.m0 {
+  margin: 0px !important;
 }
 
 nav {
@@ -138,6 +141,7 @@ article {
 .seperator {
   width: 100%;
   border-top: 1px solid;
+  margin: 45px 0px;
 }
 
 .text-wrapper {
@@ -146,7 +150,6 @@ article {
   align-self: center;
   max-width: 80%;
   margin: auto;
-  margin-top: 30px;
   transform: translateY(1000px);
 }
 .text-wrapper p:first-child:first-letter {
@@ -158,6 +161,59 @@ article {
 }
 .text-wrapper p a {
   color: #BB86FC;
+}
+
+#contact {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+#contact h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+#contact a {
+  color: #fff;
+  transition: ease 0.3s color;
+}
+#contact a i {
+  font-size: 32px;
+  margin: 0px 15px;
+}
+#contact a:hover {
+  color: #BB86FC;
+  cursor: pointer;
+}
+
+#projects {
+  width: 100%;
+}
+#projects .container {
+  width: 80%;
+  margin: auto;
+}
+#projects .container h3 {
+  font-size: 24px;
+}
+#projects .container .banner-img {
+  background-color: red;
+  position: relative;
+  width: 100%;
+  padding-top: 50vh;
+}
+#projects .container .banner-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+  object-position: top;
 }
 
 .simplebar-wrapper {
