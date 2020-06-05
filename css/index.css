@@ -13,6 +13,10 @@ body {
   flex-direction: row;
 }
 
+a {
+  transition: ease 0.3s color;
+}
+
 h1 {
   font-family: "Playfair Display";
   font-weight: 700;
@@ -37,11 +41,24 @@ p {
   font-family: "Playfair Display";
   font-size: 15px;
   line-height: 35px;
+  color: #fff;
+}
+
+img {
+  max-width: 100%;
 }
 
 .large {
   font-size: 24px !important;
   margin: 0px;
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0px -30px;
 }
 
 .flex-center {
@@ -67,7 +84,6 @@ nav a {
   color: #fff;
   font-family: "Heebo";
   font-size: 14px;
-  transition: ease 0.3s color;
 }
 nav a:nth-child(1) {
   margin-top: -15px;
@@ -77,6 +93,10 @@ nav a:nth-child(5) {
 }
 nav a:hover {
   color: #BB86FC;
+}
+
+#mobile {
+  display: none;
 }
 
 .sidebar {
@@ -176,7 +196,6 @@ article {
 }
 #contact a {
   color: #fff;
-  transition: ease 0.3s color;
 }
 #contact a i {
   font-size: 32px;
@@ -198,7 +217,7 @@ article {
   font-size: 24px;
 }
 #projects .container .banner-img {
-  background-color: red;
+  background-color: #BB86FC;
   position: relative;
   width: 100%;
   padding-top: 50vh;
@@ -215,18 +234,148 @@ article {
   object-fit: cover;
   object-position: top;
 }
+#projects .container #banner-overlay {
+  background-color: #1F1F1F;
+  width: 75%;
+  margin: auto;
+  margin-top: -50px;
+  padding: 30px;
+  position: relative;
+  text-align: center;
+}
+#projects .container #banner-overlay a {
+  color: #fff;
+  transition: ease 0.3s color;
+}
+#projects .container #banner-overlay a:hover {
+  color: #BB86FC;
+  cursor: pointer;
+}
+#projects .container .card {
+  margin: 60px 0px;
+  -ms-flex: 0 0 33.333333%;
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+  padding: 0px 15px;
+}
+#projects .container .card img {
+  height: 550px;
+  width: 100%;
+  object-fit: cover;
+}
+#projects .container .card .card-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #1F1F1F;
+  width: 75%;
+  min-height: 345px;
+  margin: auto;
+  margin-top: -50px;
+  padding: 30px;
+  position: relative;
+  text-align: center;
+}
+#projects .container .card .card-overlay a {
+  color: #fff;
+}
 
 .simplebar-wrapper {
   max-height: 100% !important;
 }
 
 @media only screen and (max-width: 780px) {
+  body {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+  }
+
   article {
     width: 100%;
   }
 
+  nav {
+    display: none;
+  }
+
+  #mobile {
+    display: none;
+  }
+
+  .hamburger-navigation.is-opened {
+    background: #121212 !important;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+  }
+
+  .hamburger-navigation.is-opened li {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+    pointer-events: auto;
+    transition-timing-function: ease;
+    transition-duration: 0.3s;
+  }
+  .hamburger-navigation.is-opened li a {
+    color: #fff;
+  }
+
+  .hamburger-navigation li {
+    width: 100%;
+    float: left;
+    opacity: 0;
+    pointer-events: none;
+    display: block;
+    transition: transform 0.3s, opacity 0.3s;
+    transform: translateY(100%);
+    transition-timing-function: ease-out;
+    margin: 10px 0;
+  }
+
   .purple-bg {
     display: none;
+  }
+
+  .sidebar {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 50px; */
+    background: #1F1F1F;
+    position: fixed;
+    bottom: 0;
+    z-index: 99;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  #projects .container .card .card-overlay {
+    width: 95%;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  #projects .container #banner-overlay {
+    width: 95%;
+  }
+
+  #projects .container .card {
+    margin: 60px 0px;
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+    padding: 0px 15px;
   }
 }
 

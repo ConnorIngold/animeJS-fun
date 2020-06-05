@@ -28,6 +28,17 @@
 
 </head>
 <body>
+  <nav id="mobile">
+    <ul class="hamburger-navigation is-opened">
+  
+      <li><a href="/">Home</a></li>
+  
+      <li><a href="/projects.html">Projects</a></li>
+  
+      <li><a href="/contact.html/">Contact</a></li>
+  
+    </ul>
+  </nav>
   <div class="sidebar">
     <div class="hamburger">
       <svg width="22" height="18" xmlns="http://www.w3.org/2000/svg">
@@ -36,7 +47,7 @@
     </div>
 
     <nav>
-      <a href="#">HOME</a>
+      <a href="/">HOME</a>
       <svg width="12" height="13" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M5.843 4.912L10.255.6l1.397 1.43L7.24 6.344l4.312 4.412-1.43 1.397L5.81 7.74l-4.412 4.312L0 10.622 4.412 6.31.1 1.898 1.53.5l4.313 4.412z"
@@ -61,11 +72,62 @@
       </div>
 
       <div id="banner-overlay">
-        <h4>Bolton University</h4>
-        <p>"James quote here: Connor is great"</p>
-        <a href="">James site</a>
+        <h4>Featured Project: <a href="https://www.bolton.ac.uk/">Bolton University</a></h4>
+        <h2><em>"James quote here: Connor is great"</em></h2>
+        <p><a href="https://jpstudios.co.uk/">JPstudios</a> - Mar, 15, 2019</p>
+      </div>
+      <div class="row">
+        <div class="card">
+          <img style="object-position: top;" src="img/giggabox.png" alt="">
+          <div class="card-overlay">
+            <h4>
+              Project: <a href="https://www.giggabox.co.uk/"> Giggabox</a>
+              </p>
+              <p><em>"Specialists in delivering spectacular events and crafting beautiful films for business."</em>
+              </p>
+              <p>Mar, 15, 2019</p>
+          </div>
+        </div>
+        <div class="card">
+          <img style="object-position: top;" src="img/dawsonGroup.png" alt="">
+          <div class="card-overlay">
+            <h4>
+              Project: <a href="https://www.dawsongroupinternational.com/">Dawson Group ITL</a>
+              </p>
+              <p><em>"Dawsongroup international provide an extensive range of innovative and cost effective inflatable cold store solutions."</em>
+              </p>
+              <p>Mar, 15, 2019</p>
+          </div>
+        </div>
+        <div class="card">
+          <img style="object-position: top;" src="img/old-portfolio.png" alt="">
+          <div class="card-overlay">
+            <h4>
+              Project: <a href="https://connoringold.github.io/shuttle-Code-Portfolio/"> Old Portfolio</a>
+              </p>
+              <p><em>"My old portfolio I used whilst I was self employed. My skills have massivly improved since then hence this new portfolio."</em>
+              </p>
+              <p>Mar, 15, 2019</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+  <script src="js/anime.min.js"></script>
+  <script src="js/waypoints.min.js"></script>
+  <script src="js/simplebar.min.js"></script>
+  <script>
+      new SimpleBar(document.querySelector("#projects"), { overflowX: false })
+  </script>
+  <script>
+    document.querySelector(".hamburger").addEventListener('click', function () {
+      
+      if(document.getElementById('mobile').style.display === "block"){
+        document.getElementById('mobile').style.display = "none"
+      } else {
+        document.getElementById('mobile').style.display = "block"
+      }
+    })
+  </script>
 </body>
 </html>
