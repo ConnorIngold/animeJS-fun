@@ -3,6 +3,7 @@ const cacheName = "v1"
 const cacheAssets = [
   "index.html",
   "/css/index.css",
+  "/js/vue.min.js",
   "/js/anime.min.js",
   "/js/waypoints.min.js",
   "/js/simplebar.min.js",
@@ -10,7 +11,7 @@ const cacheAssets = [
   "/js/function.js",
   "/img/download.png",
   "/img/placeholder.jpg",
-  "/img/favicon.jpg"
+  "/img/favicon.jpg",
 ]
 
 
@@ -53,3 +54,4 @@ self.addEventListener("fetch", (e) => {
   console.log("Service Worker: Fetching")
   e.respondWith(fetch(e.request).catch(() => caches.match(e.request)))
 })
+

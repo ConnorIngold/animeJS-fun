@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Connor Ingold | Web Developer Portfolio">
+  <meta name="theme-color" content="#BB86FC" />
+
+  <!-- Apple Touch Icon (at least 200x200px) -->
+  <link rel="apple-touch-icon" href="img/favicon.png">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <!-- To run web application in full-screen -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <!-- Status Bar Style (see Supported Meta Tags below for available values) -->
+  <!-- Has no effect unless you have the previous meta tag -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <title>Connor Ingold</title>
+  <!-- STYLESHEETS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+  <link rel="manifest" href="./manifest.json">
+  <style>
+    #sidebar>div>nav>a:nth-child(5) {
+      border-bottom: 1px solid;
+    }
+  </style>
+  <!-- SCRIPTS -->
+
+</head>
+<body>
+    <nav id="mobile">
+      <ul class="hamburger-navigation is-opened">
+    
+        <li><a href="/">Home</a></li>
+    
+        <li><a href="/projects.html">Projects</a></li>
+    
+        <li><a href="/contact.html">Contact</a></li>
+    
+      </ul>
+    </nav>
+    <div id="sidebar" class="sidebar">
+      <sidebar></sidebar>
+    </div>
+    <div id="contactForm">
+      <contact-from></contact-from>
+    </div>
+    
+  <script src="js/vue.min.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/anime.min.js"></script>
+  <script src="js/waypoints.min.js"></script>
+  <script src="js/simplebar.min.js"></script>
+
+  <script>
+
+  let inputs = document.querySelectorAll("input[type=text], input[type=email], input[type=textarea]")
+  let form = document.querySelectorAll("form")
+
+  for (const input of inputs) {
+    input.addEventListener("focusout",  function (event) {
+      let nameOfInput = this.name
+      let nameOfLabel = document.querySelector("label[for=" + this.name + "]")
+      if(this.value === ""){
+        nameOfLabel.classList.remove("active")
+      }
+    });
+    input.addEventListener("focus", function (event) {
+      let nameOfInput = this.name
+      let nameOfLabel = document.querySelector("label[for=" + this.name + "]")
+      console.log(nameOfInput, nameOfLabel)
+      nameOfLabel.classList.add("active")
+    })
+  }
+  </script>
+  <script>
+    
+  </script>
+</body>
+</html>
+
