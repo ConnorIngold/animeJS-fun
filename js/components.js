@@ -43,7 +43,10 @@ Vue.component("contact-from", {
   },
   methods: {
     onSubmit: function () {
-      alert("Not yet finished please go to the bottom of the home page to find wya to contact me")
+      alert(
+        "Not yet finished please go to the bottom of the home page to find wya to contact me"
+      )
+      submit()
     },
   },
   template: `  
@@ -52,7 +55,7 @@ Vue.component("contact-from", {
     <div class="inner-container">
       <div class="header">
         <div class="container">
-          <h3>Contact me ☝️</h3>
+          <h3>Contact me ☎️</h3>
         </div>
       </div>
       <div class="container">
@@ -61,17 +64,17 @@ Vue.component("contact-from", {
             <form action="submit" @submit.prevent="onSubmit" >
               <div class="wrapper">
                 <label for="name">Your Name:</label>
-                <input type="text" name="name" id="">
+                <input type="text" name="name" required id="">
               </div>
               <div class="wrapper">
                 <label for="email">Email:</label>
-                <input type="email" name="email" id="">
+                <input type="email" name="email" required id="">
               </div>
               <div class="wrapper">
                 <label for="msg">Your Message:</label>
-                <input type="textarea" name="msg" id="">
+                <input type="textarea" name="msg" required id="">
               </div>
-              <input type="submit" value="submit">
+              <input type="submit" value="submit" class="g-recaptcha" data-sitekey="6Lc6DAEVAAAAADR4TPUe9ZtsJFh2y0qirUVAC0zT" data-callback="onSubmit" data-action="submit" >
             </form>
           </div>
         </div>
