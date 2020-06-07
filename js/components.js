@@ -88,7 +88,10 @@ Vue.component("contact-from", {
               <input 
               type="submit" 
               value="submit" 
-               >
+              class="g-recaptcha" 
+              data-sitekey="reCAPTCHA_site_key" 
+              data-callback="onSubmit2" 
+              data-action="submit">
             </form>
           </div>
         </div>
