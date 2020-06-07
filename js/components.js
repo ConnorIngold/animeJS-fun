@@ -89,7 +89,7 @@ Vue.component("contact-from", {
               type="submit" 
               value="submit" 
               class="g-recaptcha" 
-              data-sitekey="reCAPTCHA_site_key" 
+              data-sitekey="6Lc6DAEVAAAAADR4TPUe9ZtsJFh2y0qirUVAC0zT" 
               data-callback="onSubmit2" 
               data-action="submit">
             </form>
