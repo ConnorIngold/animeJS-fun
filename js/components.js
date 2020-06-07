@@ -46,7 +46,18 @@ Vue.component("contact-from", {
       alert(
         "Not yet finished please go to the bottom of the home page to find wya to contact me"
       )
-      submit()
+      axios
+        .post("https://connoringoldcontactform.herokuapp.com/contact", {
+          email: "test@gmail.com",
+          name: "testPerson",
+          message: "hello there",
+        })
+        .then(function (response) {
+          console.log(response)
+        })
+        .catch(function (error) {
+          console.log(error)
+        })
     },
   },
   template: `  
@@ -74,7 +85,10 @@ Vue.component("contact-from", {
                 <label for="msg">Your Message:</label>
                 <input type="textarea" name="msg" required id="">
               </div>
-              <input type="submit" value="submit" class="g-recaptcha" data-sitekey="6Lc6DAEVAAAAADR4TPUe9ZtsJFh2y0qirUVAC0zT" data-callback="onSubmit" data-action="submit" >
+              <input 
+              type="submit" 
+              value="submit" 
+               >
             </form>
           </div>
         </div>

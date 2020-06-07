@@ -57,6 +57,7 @@
   <script src="js/waypoints.min.js"></script>
   <script src="js/simplebar.min.js"></script>
   <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
   <script>
 
   let inputs = document.querySelectorAll("input[type=text], input[type=email], input[type=textarea]")
@@ -78,9 +79,11 @@
     })
   }
   </script>
-  <script>
-    
-  </script>
+<script>
+  function onSubmit2(token) {
+    document.getElementById("demo-form").submit();
+  }
+</script>
 </body>
 </html>
 

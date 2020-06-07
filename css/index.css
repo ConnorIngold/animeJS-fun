@@ -129,6 +129,8 @@ nav a:hover {
   background-color: #BB86FC;
   transition: all 0.6s ease;
   transform-origin: center;
+  position: relative;
+  top: 30px;
 }
 .indicator:hover {
   cursor: pointer;
@@ -556,10 +558,10 @@ article {
   height: 45px;
   position: relative;
   margin: 30px 0px;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg) scale(0.8);
+  -moz-transform: rotate(0deg) scale(0.8);
+  -o-transform: rotate(0deg) scale(0.8);
+  transform: rotate(0deg) scale(0.8);
   -webkit-transition: 0.5s ease-in-out;
   -moz-transition: 0.5s ease-in-out;
   -o-transition: 0.5s ease-in-out;
